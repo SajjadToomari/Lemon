@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Portal.Application.Common
 {
-    public class ValidateCommandBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+    public class ValidateCommandBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
     {
         private readonly IList<IValidator<TRequest>> _validators;
 

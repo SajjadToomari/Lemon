@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Portal.Application.Common
 {
-    public class CommitCommandPostProcessor<TRequest, TResponse> : IRequestPostProcessor<TRequest, TResponse>
+    public class CommitCommandPostProcessor<TRequest, TResponse> : IRequestPostProcessor<TRequest, TResponse> where TRequest : IRequest<TResponse>
     {
         private readonly PortalDbContext _db;
 
